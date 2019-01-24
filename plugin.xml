@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="my-cordova-plugin" version="1.0.0" 
+xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+xmlns:android="http://schemas.android.com/apk/res/android">    
+    <name>My cordova plugin</name>
+    <description>Leitor de gabarito</description>
+    <license>CED</license>
+    <keywords>cordova,gabarito,leitor</keywords>    
+
+    <js-module src="www/plugin.js" name="plugin">
+        <clobbers target="MyCordovaPlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="MyCordovaPlugin" >
+                <param name="android-package" value="com.exemple.MyCordovaPlugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/com/exemple/MyCordovaPlugin.java" target-dir="src/com/exemple/" />
+    </platform>   
+</plugin>
